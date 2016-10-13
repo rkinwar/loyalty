@@ -1,0 +1,6 @@
+---
+applications:
+  - name: loyatytext
+    buildpack: java_buildpack
+    path: target/Loyalty.war
+    
