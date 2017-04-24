@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.demo</groupId>
-  <artifactId>Loyalty</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>ca.deloitte.digital</groupId>
+  <artifactId>pcf-loyalty</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
   <name>Loyalty Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -44,21 +44,26 @@
 		<groupId>com.h2database</groupId>
 		<artifactId>h2</artifactId>
 	</dependency>
-	<dependency>
+	<!-- <dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-devtools</artifactId>
-	</dependency>
+	</dependency> -->
 	<dependency>
 	   <groupId>org.apache.tomcat.embed</groupId>
 	   <artifactId>tomcat-embed-jasper</artifactId>
 	   <scope>provided</scope>
-	</dependency>
+	</dependency> 
 	<dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>jstl</artifactId>
         <version>1.2</version>
-    </dependency>
-  </dependencies>
+    </dependency> 
+    
+    <dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-cloudfoundry-connector</artifactId>
+</dependency>
+ </dependencies>
   
   
   <build>
@@ -70,23 +75,12 @@
 		</plugin>
 	</plugins>
   </build>
-  <repositories>
-  <repository>
-            <id>spring-releases</id>
-            <name>Spring Releases</name>
-            <url>https://repo.spring.io/libs-release</url>
-    </repository>
+ <distributionManagement>
     <repository>
-            <id>org.jboss.repository.releases</id>
-            <name>JBoss Maven Release Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-        </repository>
-    <repository>
-      <id>SpringBoot Repo</id>
-      <name>your custom repo</name>
-      <url>https://mvnrepository.com/artifact/org.springframework.boot</url>
+        <id>central</id>
+        <name>995b8ed68f26-releases</name>
+        <url>http://localhost:8082/artifactory/libs-release-local</url>
     </repository>
-  </repositories>
-  
+</distributionManagement>
   
 </project>

@@ -1,6 +1,0 @@
----
-applications:
-  - name: springloyalty
-    buildpack: java_buildpack
-    path: Loyalty.war
-    

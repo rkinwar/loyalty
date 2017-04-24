@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.Shopper;
@@ -41,11 +42,11 @@ public class LoyaltyController {
 		
 		Shopper shopper = new Shopper();
 		shopper.setAge(22);
-		shopper.setFirstName("raj");
+		shopper.setFirstName(name);
 		shopper.setLastName("king");
 		shopperRepository.save(shopper);		
 		
-		return "Hello! Welcome to Spring Boot Sample. " + name.toUpperCase();		
+		return "Hello Welcome to the shopping " + shopper.getFirstName();		
     }
 	
 	@RequestMapping(value = { "/hello**" }, method = RequestMethod.GET)
